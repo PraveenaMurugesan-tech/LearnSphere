@@ -71,3 +71,9 @@ The hero uses the local `learning-path.svg` illustration and `learnsphere.svg` i
 - The registration handler validates all required values, checks email/phone/password rules and matching passwords, blocks repeat enrollment for the same email/course, and stores non-sensitive registration details in local storage.
 - The contact handler validates its required fields and displays a demo-only confirmation rather than pretending to send a message to a server.
 - Small helpers escape generated text, update accessible validation states, manage the mobile menu, and display the current year.
+
+## HTML, CSS, and JavaScript concepts demonstrated
+
+- **HTML:** semantic landmarks (`header`, `nav`, `main`, `section`, and `footer`), heading hierarchy, accessible labels, form controls, native dialog, links, and live status regions.
+- **CSS:** custom properties, reusable components, Grid and Flexbox, gradients, responsive media queries, focus/hover states, CSS-drawn illustrations, and `prefers-reduced-motion`.
+- **JavaScript:** arrays and objects, functions, template literals, DOM selection and rendering, event listeners and delegation, filtering/sorting, form events and validation, `localStorage`, JSON, and native dialog methods.
