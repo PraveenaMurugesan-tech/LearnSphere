@@ -77,3 +77,35 @@ The hero uses the local `learning-path.svg` illustration and `learnsphere.svg` i
 - **HTML:** semantic landmarks (`header`, `nav`, `main`, `section`, and `footer`), heading hierarchy, accessible labels, form controls, native dialog, links, and live status regions.
 - **CSS:** custom properties, reusable components, Grid and Flexbox, gradients, responsive media queries, focus/hover states, CSS-drawn illustrations, and `prefers-reduced-motion`.
 - **JavaScript:** arrays and objects, functions, template literals, DOM selection and rendering, event listeners and delegation, filtering/sorting, form events and validation, `localStorage`, JSON, and native dialog methods.
+
+## Viva questions and answers
+
+1. **Why is the course catalog stored in a JavaScript array?**  
+   It keeps course content structured in one place and lets the page render and filter cards consistently without repeating the HTML.
+
+2. **How does the search work?**  
+   On each input event, the script compares the lowercase search text with course titles, instructor names, categories, and descriptions, then re-renders the matching cards.
+
+3. **How are multiple filters combined?**  
+   A course must match the text query and every selected category or difficulty value. Sorting is applied to that filtered result.
+
+4. **What is event delegation, and where is it used?**  
+   A single listener on a parent handles clicks on its child controls. It is used for dynamically generated course cards, categories, and filter chips.
+
+5. **How does the course details dialog open and close?**  
+   JavaScript fills a native HTML `<dialog>` with the chosen course and calls `showModal()`. The close button, backdrop click, and built-in Escape behavior close it.
+
+6. **What does `localStorage` do in this project?**  
+   It keeps demo registration records in the same browser between visits. It is not a server or shared database, and users can clear it in browser settings.
+
+7. **Why are passwords not stored in `localStorage`?**  
+   Browser storage is not appropriate for credentials. The password is only checked in the form and is excluded from the saved registration record.
+
+8. **How does the layout adapt to small screens?**  
+   CSS media queries switch the navigation to a toggleable menu, adjust the grid columns and spacing, and reorganize the forms and content.
+
+9. **What is the purpose of `aria-live` and `aria-invalid`?**  
+   `aria-live` makes changing result and form messages available to assistive technology; `aria-invalid` marks fields that need correction.
+
+10. **Why does the contact form not send a message?**  
+    This assignment is a front-end-only demonstration without a backend. The form validates the input and clearly reports that it has not contacted a server.
