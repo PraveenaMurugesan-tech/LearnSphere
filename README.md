@@ -53,3 +53,21 @@ LearnSphere/
 ```
 
 The hero uses the local `learning-path.svg` illustration and `learnsphere.svg` is the browser tab icon. Course artwork is generated as SVG data URLs, so the catalog does not depend on remote image services.
+
+## Run locally
+
+1. Keep `index.html`, `css/`, and `js/` together in the project folder.
+2. Open `index.html` in a modern browser.
+3. For a local web-server workflow, open a terminal in this folder and run `python -m http.server 8000`; then visit `http://localhost:8000`.
+4. To inspect or clear demo registration records, open the browser developer tools and use **Application/Storage → Local Storage → `learnSphereRegistrations`**. Records stay in that browser until cleared.
+
+## JavaScript overview
+
+- `categories` and `courses` are the source data. Each course includes its category, instructor, level, rating, price, artwork colors, learning outcomes, and syllabus.
+- `renderCategories`, `renderCategoryOptions`, and `renderCourses` build the category cards, form options, and catalog cards from the data.
+- `getVisibleCourses` applies search, category, and difficulty matching before applying the selected sort order.
+- Event delegation handles course cards, category cards, footer category links, filter chips, and course enrollment actions.
+- `showCourseDetails` fills an accessible native `<dialog>` with the selected course; the close button, backdrop, and Escape key dismiss it.
+- The registration handler validates all required values, checks email/phone/password rules and matching passwords, blocks repeat enrollment for the same email/course, and stores non-sensitive registration details in local storage.
+- The contact handler validates its required fields and displays a demo-only confirmation rather than pretending to send a message to a server.
+- Small helpers escape generated text, update accessible validation states, manage the mobile menu, and display the current year.
